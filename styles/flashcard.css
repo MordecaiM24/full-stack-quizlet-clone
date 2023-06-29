@@ -1,0 +1,43 @@
+.flashcard {
+  background-color: rgb(46, 57, 86);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  height: 376px;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.hint {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.lightbulb-icon {
+  height: 16px;
+}
+
+.pencil-icon {
+  height: 16px;
+}
+.sound-icon {
+  height: 12px;
+}
+.star-icon {
+  height: 12px;
+}
+
+.card-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.options {
+  display: flex;
+  column-gap: 24px;
+  align-items: center;
+}
+
+.card {
+  font-size: 32px;
+}
