@@ -53,6 +53,15 @@
 }
 .flashcard-controls button {
   background-color: rgb(11, 9, 45);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.flashcard-controls button:hover {
+  cursor: pointer;
+  background-color: #2e3856;
 }
 
 .controls {

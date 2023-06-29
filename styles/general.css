@@ -4,6 +4,7 @@ body {
   font-family: "DM Sans", sans-serif;
   height: 1000px;
   text-align: center;
+  margin: 0;
 }
 
 h1,
@@ -21,5 +22,5 @@ h4 {
 }
 
 .page-wrapper {
-  width: 61.5%;
+  width: 61%;
 }

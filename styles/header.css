@@ -33,6 +33,15 @@
   font-size: 14px;
   margin: 16px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.left-text:hover {
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  height: 16px;
 }
 
 .middle-section {
@@ -83,6 +92,15 @@
   background-color: rgb(66, 85, 255);
   position: relative;
 }
+.create-btn:hover {
+  background-color: #423ed8;
+}
+.create-btn:active {
+  background-color: #1f1c8b;
+}
+.create-btn:focus {
+  border: 1px solid #a8b1ff;
+}
 
 .create-icon {
   position: absolute;
@@ -101,6 +119,9 @@
   background-color: rgb(11, 9, 45);
   border: solid 1px white;
   position: relative;
+}
+.notif-btn:focus {
+  outline: 1px solid #a8b1ff;
 }
 
 .notif-icon {
@@ -122,4 +143,17 @@
   border-radius: 6px;
   font-weight: 500;
   padding: 0 18px;
+}
+.upgrade-btn:hover {
+  background-color: #ffdc62;
+}
+.upgrade-btn:active {
+  background-color: #ffedab;
+}
+
+.create-btn:hover,
+.notif-btn:hover,
+.profile-btn:hover,
+.upgrade-btn:hover {
+  cursor: pointer;
 }
