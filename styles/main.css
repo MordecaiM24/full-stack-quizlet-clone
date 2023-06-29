@@ -1,0 +1,40 @@
+.terms-list-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.original {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.down-arrow {
+  height: 24px;
+}
+
+.term {
+  background-color: rgb(46, 57, 86);
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  margin: 10px 0;
+}
+
+.small-side {
+  line-height: 26px;
+  flex: 0.4;
+  border-right: solid 2px rgb(11, 9, 45);
+  text-align: left;
+  padding-left: 8px;
+  padding-right: 32px;
+}
+
+.large-side {
+  line-height: 26px;
+  text-align: left;
+  flex: 0.6;
+  padding: 0 32px;
+}
