@@ -25,6 +25,9 @@
   margin-right: 16px;
   margin-left: 12px;
 }
+.logo-text:hover {
+  cursor: pointer;
+}
 
 .left-text {
   font-size: 14px;
