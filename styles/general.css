@@ -7,6 +7,10 @@ body {
   text-align: center;
 }
 
+h1 {
+  margin: 0;
+}
+
 .body {
   display: flex;
   flex-direction: column;
@@ -15,5 +19,5 @@ body {
 }
 
 .page-wrapper {
-  width: 50%;
+  width: 60%;
 }
