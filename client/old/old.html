@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/terms.css" />
+    <link rel="stylesheet" href="styles/intro.css" />
+    <link rel="stylesheet" href="styles/flashcard.css" />
+    <title>Quizlet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="left-section">
+        <a class="logo-text">Quizlet</a>
+        <a class="left-text">Home</a>
+        <a class="left-text"
+          >Your Library
+          <img src="images/down-arrow.svg" class="dropdown-arrow" />
+        </a>
+        <a class="left-text">Expert Solutions</a>
+      </div>
+
+      <div class="middle-section">
+        <div class="search-container">
+          <img class="search-icon" src="images/search-icon.svg" />
+          <input
+            class="search-bar"
+            type="text"
+            placeholder="Study sets, textbooks, questions"
+          />
+        </div>
+      </div>
+
+      <div class="right-section">
+        <button class="create-btn">
+          <img class="create-icon" src="images/create-icon.svg" />
+        </button>
+        <button class="notif-btn">
+          <img class="notif-icon" src="images/bell-icon.svg" />
+        </button>
+        <button class="profile-btn">M</button>
+        <button class="upgrade-btn">Upgrade to Quizlet Plus</button>
+      </div>
+    </div>
+    <div class="body">
+      <div class="page-wrapper">
+        <div class="intro">
+          <div class="title-share">
+            <h1>VSEPR</h1>
+            <button class="share-btn">
+              <img class="share-icon" src="images/share-icon.svg" />
+              <span class="share-text">Share</span>
+            </button>
+          </div>
+          <div class="modes">
+            <button class="gamemode"><h3>Flashcards</h3></button>
+            <button class="gamemode"><h3>Learn</h3></button>
+            <button class="gamemode"><h3>Test</h3></button>
+            <button class="gamemode"><h3>Match</h3></button>
+            <button class="gamemode"><h3>Q-Chat</h3></button>
+          </div>
+          <div class="flashcard-player">
+            <div class="flashcard">
+              <div class="card-options">
+                <div class="hint">
+                  <img class="lightbulb-icon" src="images/lightbulb-icon.svg" />
+                  <a>Get a hint</a>
+                </div>
+                <div class="options">
+                  <img src="images/pencil-icon.svg" class="pencil-icon" />
+                  <img src="images/sound-icon.svg" class="sound-icon" />
+                  <img src="images/star.svg" class="star-icon" />
+                </div>
+              </div>
+              <div class="card">AX</div>
+              <div class="empty"></div>
+            </div>
+            <div class="flashcard-controls">
+              <div class="controls">
+                <button class="play-btn">
+                  <img class="play-icon" src="images/play-icon.svg" />
+                </button>
+                <button class="shuffle-btn">
+                  <img class="shuffle-icon" src="images/shuffle-icon.svg" />
+                </button>
+              </div>
+              <div class="arrows">
+                <button class="back-btn">
+                  <img class="back-icon" src="images/back-icon.svg" />
+                </button>
+                <a class="card-counter"> 1 / 16</a>
+                <button class="forward-btn">
+                  <img class="forward-icon" src="images/forward-icon.svg" />
+                </button>
+              </div>
+              <div class="flashcards-options">
+                <button class="settings-btn">
+                  <img class="settings-icon" src="images/setting-icon.svg" />
+                </button>
+                <button class="fullscreen-btn">
+                  <img
+                    class="fullscreen-icon"
+                    src="images/fullscreen-icon.svg"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="terms">
+          <div class="terms-list-title">
+            <h2>Terms in this set (16)</h2>
+            <div class="original">
+              <h4>Original</h4>
+              <img class="down-arrow" src="images/down-arrow.svg" />
+            </div>
+          </div>
+          <div class="term-list">
+            <div class="term">
+              <div class="small-side"><a class="word">AX</a></div>
+              <div class="large-side">
+                <a class="defintion">Linear, 180, S</a>
+              </div>
+            </div>
+            <div class="term">
+              <div class="small-side"><a class="word">AX2</a></div>
+              <div class="large-side">
+                <a class="defintion">Linear, 180, SP</a>
+              </div>
+            </div>
+            <div class="term">
+              <div class="small-side"><a class="word">AX3</a></div>
+              <div class="large-side">
+                <a class="defintion">Trigonal planar, 120</a>
+              </div>
+            </div>
+            <div class="term">
+              <div class="small-side"><a class="word">AX2E</a></div>
+              <div class="large-side">
+                <a class="defintion">Bent trigonal planar, 120</a>
+              </div>
+            </div>
+            <div class="term">
+              <div class="small-side"><a class="word">AXE2</a></div>
+              <div class="large-side">
+                <a class="defintion">Linear trigonal planar, 120</a>
+              </div>
+            </div>
+            <div class="term">
+              <div class="small-side"><a class="word">AX4</a></div>
+              <div class="large-side">
+                <a class="defintion">Tetrahedral, 109.5</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
