@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { TermSet } from "./pages/Set/TermSet";
+import { SetPage } from "./pages/Set/SetPage";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           <Route path="/library" element={<Library />}></Route>
         </Routes>
       </Router> */}
-      <TermSet />
+      <SetPage />
     </div>
   );
 }

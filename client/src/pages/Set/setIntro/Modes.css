@@ -1,0 +1,22 @@
+.modes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.gamemode {
+  border-radius: 8px;
+  flex: 1;
+  background-color: rgb(46, 56, 86);
+  border: none;
+  color: white;
+  padding: 18px 12px;
+  margin-bottom: 24px;
+}
+
+.gamemode:hover {
+  padding: 18px 12px 14px;
+  cursor: pointer;
+  border-bottom: 4px solid #a8b1ff;
+}

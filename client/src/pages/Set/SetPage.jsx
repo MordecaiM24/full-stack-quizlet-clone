@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Flashcards } from "./setIntro/flashcards/Flashcards";
+import { TermSet } from "./termSet/TermSet";
 import { Dna } from "react-loader-spinner";
-import { Card } from "./Card";
-import "./TermSetStyle.css";
-import downArrow from "../../assets/down-arrow.svg";
+import shareIcon from "../../assets/share-icon.svg";
+import "./PageStyle.css";
+import { Modes } from "./setIntro/Modes";
 
-export const TermSet = () => {
+export const SetPage = () => {
   const [cardSet, setCardSet] = useState({});
   const [isLoading, setLoading] = useState(true);
 
@@ -31,7 +33,7 @@ export const TermSet = () => {
         const setID = "649e53f6d32ee3d3984d6cea";
         try {
           const response = await axios.get(
-            `http://192.168.1.6:5000/api/flashcards/${setID}`
+            `http://localhost:5000/api/flashcards/${setID}`
           );
           setCardSet(response.data[0]);
           setLoading(false);
@@ -51,16 +53,6 @@ export const TermSet = () => {
       fetchSet();
     }, 1000);
   }, []);
-
-  const listTerms = (cards) => {
-    return cards.map((card) => {
-      return (
-        <div>
-          <Card card={card} />
-        </div>
-      );
-    });
-  };
 
   if (isLoading) {
     return (
@@ -82,38 +74,23 @@ export const TermSet = () => {
     );
   } else {
     return (
-      <div className="terms">
-        <div className="terms-list-title">
-          <h2>Terms in this set ({cardSet.cards.length})</h2>
-          <div className="sort">
-            <h4>Original</h4>
-            <img class="down-arrow" src={downArrow} />
+      <div className="body">
+        <div className="page-wrapper">
+          <div className="intro">
+            <div className="title-share">
+              <h1>{cardSet.title}</h1>
+              <button className="share-btn">
+                <img className="share-icon" src={shareIcon} />
+                <span className="share-text">Share</span>
+              </button>
+            </div>
+            <Modes />
+            <Flashcards cardSet={cardSet} />
           </div>
+
+          <TermSet cardSet={cardSet} />
         </div>
-        {listTerms(cardSet.cards)}
       </div>
     );
   }
-
-  return (
-    <div>
-      <h1>Title: {cardSet.title}</h1>
-      {/* {listTerms(cardSet.cards)} */}
-    </div>
-  );
-
-  // return (
-  //   <div>
-  //     <ul>
-  //       {cardSet.map((set) => {
-  //         return (
-  //           <li key={set._id}>
-  //             <h1>Title: {set.title}</h1>
-  //             {listTerms(set.cards)}
-  //           </li>
-  //         );
-  //       })}
-  //     </ul>
-  //   </div>
-  // );
 };

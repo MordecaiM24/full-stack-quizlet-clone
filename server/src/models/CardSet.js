@@ -4,6 +4,7 @@ const CardSetSchema = new mongoose.Schema({
   title: { type: String, required: true },
   cards: [
     {
+      order: { type: Number, required: true },
       term: { type: String, required: true },
       definition: { type: String, required: true },
     },
