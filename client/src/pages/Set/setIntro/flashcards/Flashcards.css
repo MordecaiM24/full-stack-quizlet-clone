@@ -132,3 +132,11 @@
 .fullscreen-icon {
   height: 24px;
 }
+
+.shuffle-btn:active {
+  background-color: #282e3e;
+}
+
+.shuffle-btn:focus {
+  outline: 0.0625rem solid #a8b1ff;
+}
