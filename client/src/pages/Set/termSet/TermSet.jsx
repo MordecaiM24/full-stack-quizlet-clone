@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { Card } from "./Card";
 import "./TermSetStyle.css";
-import downArrow from "../../../assets/down-arrow.svg";
+import downArrow from "assets/down-arrow.svg";
+import { CardsetContext } from "../SetPage";
 
-export const TermSet = ({ cardSet }) => {
+export const TermSet = () => {
+  const { cardSet } = useContext(CardsetContext);
+
   const listTerms = (cards) => {
     return cards.map((card) => {
       return (
