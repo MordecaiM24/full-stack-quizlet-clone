@@ -2,10 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Flashcards } from "./setIntro/flashcards/Flashcards";
 import { TermSet } from "./termSet/TermSet";
-import { Dna } from "react-loader-spinner";
-import shareIcon from "../../assets/share-icon.svg";
+import shareIcon from "assets/share-icon.svg";
 import "./PageStyle.css";
 import { Modes } from "./setIntro/Modes";
+import { Loading } from "common/Loading";
+import { Dna } from "react-loader-spinner";
 
 export const SetPage = () => {
   const [cardSet, setCardSet] = useState({});
@@ -51,27 +52,11 @@ export const SetPage = () => {
       };
 
       fetchSet();
-    }, 1000);
+    }, 10000);
   }, []);
 
   if (isLoading) {
-    return (
-      <div
-        style={{
-          position: "fixed",
-          top: "15%",
-        }}
-      >
-        <Dna
-          visible={true}
-          height="250"
-          width="250"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper"
-        />
-      </div>
-    );
+    return <Loading />;
   } else {
     return (
       <div className="body">
