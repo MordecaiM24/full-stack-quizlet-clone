@@ -1,19 +1,19 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { SetPage } from "./pages/Set/SetPage";
+import { SetPage } from "pages/Set/SetPage";
+import { Library } from "pages/Library/Library";
+import { Home } from "pages/Home/Home";
 
 function App() {
   return (
     <div className="App">
-      {/* <Router>
-        <Navbar />
+      <Router>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/cards" element={<Cards />}></Route>
+          <Route path="/cards" element={<SetPage />}></Route>
           <Route path="/library" element={<Library />}></Route>
         </Routes>
-      </Router> */}
-      <SetPage />
+      </Router>
     </div>
   );
 }
