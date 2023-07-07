@@ -10,7 +10,7 @@ export const Library = () => {
     const fetchSets = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/flashcards/`
+          `http://192.168.1.23:5000/api/flashcards/`
         );
         setCardSets(response.data);
         setLoading(false);
@@ -29,8 +29,17 @@ export const Library = () => {
   if (isLoading) {
     return <Loading />;
   } else {
-    return <div></div>;
+    return (
+      <div>
+        {cardSets.map((cardSet) => {
+          return (
+            <>
+              <p>{cardSet.title}</p>
+              <p>{cardSet.userOwner}</p>
+            </>
+          );
+        })}
+      </div>
+    );
   }
-
-  return <div>{typeof cardSets}</div>;
 };

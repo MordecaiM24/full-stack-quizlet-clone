@@ -8,7 +8,7 @@ import {
   settingIcon,
   fullscreenIcon,
 } from "assets/assets";
-import { CardsetContext } from "pages/Set/SetPage";
+import { CardsetContext } from "pages/Set/DisplaySet/SetPage";
 import { CardOptions } from "./CardOptions";
 
 /* 
