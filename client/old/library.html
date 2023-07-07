@@ -71,19 +71,32 @@
         </div>
         <div class="personal-study-sets">
           <div class="study-set-header">
-            <button>Recent</button>
-            <input
-              class="set-search"
-              type="search"
-              placeholder="Search your sets"
-            />
+            <button class="set-sort">
+              Recent <img src="images/down-arrow.svg" style="height: 24px" />
+            </button>
+            <div class="set-search-container">
+              <input
+                class="set-search"
+                type="search"
+                placeholder="Search your sets"
+              />
+              <img src="images/search-icon.svg" class="set-search-icon" />
+            </div>
           </div>
-          <div class="time-seperator">This week</div>
+          <header class="time-seperator">
+            <h5 class="time-label">THIS WEEK</h5>
+            <div class="time-seperator-line">
+              <hr color="#282e3e" />
+            </div>
+          </header>
           <div class="study-set">
             <div class="set-info">
               <p class="term-count">16 terms</p>
               <div class="set-creator">
-                <p class="set-creator-prof-pic">M</p>
+                <img
+                  class="set-creator-prof-pic"
+                  src="https://lh3.googleusercontent.com/a/AAcHTtcr1LBpHf5N5itc--qbSwRpH4yb7kx1ym5osFZjVUIx=s96-c?sz=150"
+                />
                 <p class="set-creator-user">Mordecai_Mengesteab3</p>
               </div>
             </div>
