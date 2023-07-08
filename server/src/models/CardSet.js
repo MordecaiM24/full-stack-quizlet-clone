@@ -11,22 +11,13 @@ const CardSetSchema = new mongoose.Schema({
   ],
   public: { type: Boolean, required: true },
   userOwner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "users",
-    required: true,
-  },
-});
-
-var schema = new mongoose.Schema({
-  field1: {
-    type: String,
-  },
-  subdocArray: [
-    {
-      _id: false,
-      field: { type: String },
+    ownerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "users",
+      required: true,
     },
-  ],
+    ownerName: { type: String, required: true },
+  },
 });
 
 export const CardSetModel = mongoose.model("cardSets", CardSetSchema);

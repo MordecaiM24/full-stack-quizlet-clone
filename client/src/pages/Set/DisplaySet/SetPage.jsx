@@ -6,10 +6,12 @@ import shareIcon from "assets/share-icon.svg";
 import "./PageStyle.css";
 import { Modes } from "./setIntro/Modes";
 import { Loading } from "common/Loading";
+import { useParams } from "react-router-dom";
 
 export const CardsetContext = createContext(null);
 
 export const SetPage = () => {
+  let { id } = useParams();
   const [cardSet, setCardSet] = useState({});
   const [isLoading, setLoading] = useState(true);
 
@@ -31,7 +33,7 @@ export const SetPage = () => {
 
   useEffect(() => {
     const fetchSet = async () => {
-      const setID = "649e53f6d32ee3d3984d6cea";
+      const setID = id;
       try {
         const response = await axios.get(
           `http://localhost:5000/api/flashcards/${setID}`

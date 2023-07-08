@@ -1,6 +1,9 @@
 import axios from "axios";
 import { Loading } from "common/Loading";
 import { useState, useEffect } from "react";
+import "./Library.css";
+import { LibraryHeader } from "./LibraryHeader";
+import { StudySets } from "./StudySets";
 
 export const Library = () => {
   const [isLoading, setLoading] = useState(false);
@@ -30,15 +33,11 @@ export const Library = () => {
     return <Loading />;
   } else {
     return (
-      <div>
-        {cardSets.map((cardSet) => {
-          return (
-            <>
-              <p>{cardSet.title}</p>
-              <p>{cardSet.userOwner}</p>
-            </>
-          );
-        })}
+      <div className="body">
+        <div className="library-page">
+          <LibraryHeader />
+          <StudySets />
+        </div>
       </div>
     );
   }

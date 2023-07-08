@@ -32,8 +32,10 @@ const Login = () => {
 
       setCookies("access_token", result.data.token);
       window.localStorage.setItem("userID", result.data.userID);
+      window.localStorage.setItem("username", username);
       navigate("/");
     } catch (error) {
+      console.log(error);
       alert("Username or password is incorrect");
     }
   };
@@ -85,6 +87,7 @@ const Register = () => {
       );
       setCookies("access_token", result.data.token);
       window.localStorage.setItem("userID", result.data.userID);
+      window.localStorage.setItem("username", username);
       navigate("/");
     } catch (error) {
       alert("User already exists");

@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/cards" element={<SetPage />}></Route>
+          <Route path="/cards/:id" element={<SetPage />}></Route>
           <Route path="/library" element={<Library />}></Route>
           <Route path="/auth" element={<Auth />}></Route>
           <Route path="/create" element={<CreateSet />}></Route>

@@ -1,0 +1,179 @@
+.library-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1204px;
+}
+
+.library-page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 99%;
+}
+
+.library-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 24px;
+  margin: 24px 0;
+}
+
+.library-user-prof-pic {
+  height: 64px;
+  width: 64px;
+  border-radius: 32px;
+}
+
+.library-page-tabs {
+  width: 100%;
+  border-bottom: solid 2px #282e3e;
+  display: flex;
+  align-items: center;
+}
+
+.page-tab {
+  margin-top: 12px;
+  margin-bottom: 10px;
+  margin-right: 16px;
+  margin-left: 16px;
+  padding: 0;
+  background-color: rgb(11, 9, 45);
+  border: none;
+  color: #939bb4;
+  font-weight: bold;
+}
+
+.personal-study-sets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.study-set-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 40px 0;
+  margin-bottom: 32px;
+}
+
+.set-sort {
+  background-color: rgb(11, 9, 45);
+  color: white;
+  border: solid 1px white;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  border-radius: 8px;
+}
+
+.set-search-container {
+  position: relative;
+}
+
+.set-search {
+  padding: 4px 16px;
+  background-color: rgb(46, 56, 86);
+  border: none;
+  height: 48px;
+  width: 600px;
+  position: relative;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.set-search::placeholder {
+  color: rgb(246, 247, 251);
+}
+
+.set-search-icon {
+  position: absolute;
+  height: 20px;
+  right: 16px;
+  top: 12px;
+  z-index: 100;
+}
+
+.time-seperator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  column-gap: 16px;
+  padding-bottom: 20px;
+}
+
+.time-label {
+  font-size: 14px;
+  flex-basis: min-content;
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+.time-seperator-line {
+  width: 100%;
+}
+
+hr {
+  border: none;
+  height: 1px;
+}
+
+.study-set {
+  width: 100%;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgb(46, 56, 86);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.set-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.set-creator {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.set-creator-prof-pic {
+  height: 16px;
+  border-radius: 8px;
+}
+
+.set-info {
+  background-color: rgb(46, 57, 86);
+  display: flex;
+  font-size: 14px;
+}
+
+.term-count {
+  line-height: 16px;
+  flex: 0.4;
+  border-right: solid 2px rgb(11, 9, 45);
+  text-align: left;
+  padding-right: 16px;
+}
+
+.set-creator {
+  padding-left: 16px;
+  line-height: 16px;
+  text-align: left;
+  flex: 0.6;
+}
+
+.set-title {
+  padding: 4px 0;
+}
