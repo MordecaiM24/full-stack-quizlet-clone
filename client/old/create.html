@@ -3,7 +3,155 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/create-heading.css" />
+    <link rel="stylesheet" href="styles/create-body.css" />
+    <title>Quizlet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <!--For the sake of familiarity-->
+      <div class="left-section">
+        <a class="logo-text">Quizlet</a>
+        <a class="left-text">Home</a>
+        <a class="left-text"
+          >Your Library
+          <img src="images/down-arrow.svg" class="dropdown-arrow" />
+        </a>
+        <a class="left-text">Expert Solutions</a>
+      </div>
+
+      <div class="middle-section">
+        <div class="search-container">
+          <img class="search-icon" src="images/search-icon.svg" />
+          <input
+            class="search-bar"
+            type="text"
+            placeholder="Study sets, textbooks, questions"
+          />
+        </div>
+      </div>
+
+      <div class="right-section">
+        <button class="create-btn">
+          <img class="create-icon" src="images/create-icon.svg" />
+        </button>
+        <button class="notif-btn">
+          <img class="notif-icon" src="images/bell-icon.svg" />
+        </button>
+        <button class="profile-btn">M</button>
+        <button class="upgrade-btn">Upgrade to Quizlet Plus</button>
+      </div>
+    </header>
+    <div class="body">
+      <div class="create-set">
+        <div style="margin-bottom: 52px">
+          <div class="create-set-header">
+            <h1>Create a new study set</h1>
+            <button
+              style="
+                background-color: #4255ff;
+                color: white;
+                line-height: 20px;
+                border: none;
+                border-radius: 4px;
+                padding: 8px 16px;
+              "
+            >
+              Create
+            </button>
+          </div>
+          <div class="create-set-heading">
+            <input
+              type="text"
+              id="title"
+              class="create-set-title"
+              placeholder='Enter a title, like "Biology - Chapter 23 Evolution"'
+            />
+            <div class="create-set-extras">
+              <textarea
+                type="text"
+                id="description"
+                class="create-set-description"
+                placeholder="Add a description..."
+              ></textarea>
+              <div class="create-set-environment">
+                <input
+                  type="text"
+                  id="school"
+                  class="create-set-school"
+                  placeholder="School"
+                />
+                <input
+                  type="text"
+                  id="Subject"
+                  class="create-set-subject"
+                  placeholder="Subject"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="create-set-options">
+            <div class="create-set-functions">
+              <button>
+                <img src="images/create-icon.svg" />
+                Import
+              </button>
+              <button>
+                <img src="images/create-icon.svg" />
+                Add diagram
+              </button>
+              <button>Create from notes</button>
+            </div>
+            <div class="create-set-utility">
+              <button>
+                <img src="images/setting-icon.svg" />
+              </button>
+              <button>
+                <img src="images/flip-icon.svg" />
+              </button>
+              <button>
+                <img src="images/keyboard-icon.svg" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="create-set-body">
+          <div class="create-set-card">
+            <div class="create-set-taskbar">
+              <p>1</p>
+              <p>=</p>
+            </div>
+            <div class="card-body">
+              <div class="term-container">
+                <input
+                  type="text"
+                  class="create-term"
+                  id="term"
+                  placeholder="Enter term"
+                />
+                <p>T E R M</p>
+              </div>
+              <div class="definition-container">
+                <input
+                  type="text"
+                  class="create-definition"
+                  id="definition"
+                  placeholder="Enter definition"
+                />
+                <p>D E F I N I T I O N</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
