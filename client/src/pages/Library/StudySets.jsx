@@ -11,7 +11,7 @@ export const StudySets = () => {
     const fetchSets = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/flashcards"
+          "http://192.168.1.23:5000/api/flashcards"
         );
         setCardSets(response.data);
         console.log(response.data);

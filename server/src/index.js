@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import { userRouter } from "./routes/users.js";
 import { flashcardRouter } from "./routes/flashcards.js";
+import { autoCreate } from "./controllers/cards.js";
 
 const app = express();
 

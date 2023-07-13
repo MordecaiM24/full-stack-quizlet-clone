@@ -5,9 +5,12 @@ import {
   getPublicSets,
   getSetByID,
   editFlashcard,
+  autoCreate,
 } from "../controllers/cards.js";
 
 const router = express.Router();
+
+router.get("/auto", autoCreate);
 
 router.get("/", getPublicSets);
 

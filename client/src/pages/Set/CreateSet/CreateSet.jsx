@@ -48,7 +48,7 @@ export const CreateSet = () => {
     console.log(cardSet);
     try {
       await axios.post(
-        "http://localhost:5000/api/flashcards",
+        "http://192.168.1.23:5000/api/flashcards",
         { ...cardSet },
         { headers: { authorization: cookies.access_token } }
       );

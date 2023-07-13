@@ -25,10 +25,13 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("http://localhost:5000/api/users/login", {
-        username,
-        password,
-      });
+      const result = await axios.post(
+        "http://192.168.1.23:5000/api/users/login",
+        {
+          username,
+          password,
+        }
+      );
 
       setCookies("access_token", result.data.token);
       window.localStorage.setItem("userID", result.data.userID);
@@ -79,7 +82,7 @@ const Register = () => {
     event.preventDefault();
     try {
       const result = await axios.post(
-        "http://localhost:5000/api/users/register",
+        "http://192.168.1.23:5000/api/users/register",
         {
           username,
           password,
