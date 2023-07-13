@@ -126,3 +126,14 @@
 .create-set-utility img {
   height: 22px;
 }
+
+.create-set input,
+.create-set select,
+.create-set textarea {
+  color: white;
+}
+
+.create-set textarea:focus,
+.create-set input:focus {
+  color: white;
+}

@@ -15,6 +15,7 @@ import {
 } from "assets/assets";
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import { AutoCreate } from "./AutoCreate";
 
 export const CreateSet = () => {
   const [cardSet, setCardSet] = useState({
@@ -38,6 +39,8 @@ export const CreateSet = () => {
   const [cookies, _] = useCookies(["access_token"]);
 
   const navigate = useNavigate("/library");
+
+  const [visibility, setVisibility] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -92,8 +95,28 @@ export const CreateSet = () => {
     setCardSet({ ...cardSet, cards: newCards });
   };
 
+  const resetCards = () => {
+    setCardSet({
+      ...cardSet,
+      cards: [
+        { index: 0, term: "", definition: "" },
+        { index: 1, term: "", definition: "" },
+        { index: 2, term: "", definition: "" },
+        { index: 3, term: "", definition: "" },
+      ],
+    });
+  };
+
   return (
     <div className="body">
+      <button onClick={() => setVisibility(true)}>Autocreate Set</button>
+      {visibility && (
+        <AutoCreate
+          setCardSet={setCardSet}
+          cardSet={cardSet}
+          setVisibility={setVisibility}
+        />
+      )}
       <form className="create-set" onSubmit={handleSubmit}>
         <div style={{ marginBottom: "52px" }}>
           <div className="create-set-header">
@@ -202,6 +225,12 @@ export const CreateSet = () => {
           </div>
         </div>
         <div className="create-set-body">
+          <input
+            type="button"
+            onClick={resetCards}
+            value="Reset cards"
+            style={{ color: "black" }}
+          />
           {cardSet.cards.map((card, index) => {
             return (
               <li className="create-set-card" key={index}>
