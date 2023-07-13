@@ -12,6 +12,7 @@ import {
   flipIcon,
   keyboardIcon,
   trashIcon,
+  xIcon,
 } from "assets/assets";
 import axios from "axios";
 import { useCookies } from "react-cookie";
@@ -109,7 +110,6 @@ export const CreateSet = () => {
 
   return (
     <div className="body">
-      <button onClick={() => setVisibility(true)}>Autocreate Set</button>
       {visibility && (
         <AutoCreate
           setCardSet={setCardSet}
@@ -205,11 +205,13 @@ export const CreateSet = () => {
                 <img src={createIcon} />
                 Import
               </button>
-              <button>
-                <img src={createIcon} />
-                Add diagram
+              <button type="button" onClick={resetCards}>
+                <img src={xIcon} style={{ height: "22px" }} />
+                Reset Cards
               </button>
-              <button>Create from notes</button>
+              <button type="button" onClick={() => setVisibility(true)}>
+                Autocreate Set
+              </button>
             </div>
             <div className="create-set-utility">
               <button>
@@ -225,12 +227,6 @@ export const CreateSet = () => {
           </div>
         </div>
         <div className="create-set-body">
-          <input
-            type="button"
-            onClick={resetCards}
-            value="Reset cards"
-            style={{ color: "black" }}
-          />
           {cardSet.cards.map((card, index) => {
             return (
               <li className="create-set-card" key={index}>

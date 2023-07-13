@@ -16,6 +16,7 @@ import shuffleIcon from "./shuffle-icon.svg";
 import soundIcon from "./sound-icon.svg";
 import star from "./star.svg";
 import trashIcon from "./trash-icon.svg";
+import xIcon from "./x-icon.svg";
 
 export {
   backIcon,
@@ -36,4 +37,5 @@ export {
   soundIcon,
   star,
   trashIcon,
+  xIcon,
 };
