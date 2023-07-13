@@ -1,0 +1,88 @@
+.toggle {
+  position: relative;
+  display: block;
+  width: 98px;
+  height: 32px;
+  padding: 3px;
+  margin: auto;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.toggle-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.toggle-label {
+  position: relative;
+  display: block;
+  height: inherit;
+  font-size: 12px;
+  background: rgb(47, 56, 86);
+  border-radius: inherit;
+}
+.toggle-label:before,
+.toggle-label:after {
+  position: absolute;
+  top: 50%;
+  color: black;
+  margin-top: -0.5em;
+  line-height: 1;
+}
+.toggle-label:before {
+  content: attr(data-off);
+  right: 11px;
+  color: #fff;
+}
+.toggle-label:after {
+  content: attr(data-on);
+  left: 11px;
+  color: white;
+  opacity: 0;
+}
+.toggle-input:checked ~ .toggle-label {
+  background: rgb(60, 207, 207);
+}
+.toggle-input:checked ~ .toggle-label:before {
+  opacity: 0;
+}
+.toggle-input:checked ~ .toggle-label:after {
+  opacity: 1;
+}
+.toggle-handle {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to bottom, #ffffff 40%, #f0f0f0);
+  border-radius: 50%;
+}
+.toggle-handle:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -6px 0 0 -6px;
+  width: 16px;
+  height: 16px;
+}
+.toggle-input:checked ~ .toggle-handle {
+  left: 64px;
+}
+/*Transition */
+.toggle-label,
+.toggle-handle {
+  transition: All 0.3s ease;
+  -webkit-transition: All 0.3s ease;
+  -moz-transition: All 0.3s ease;
+  -o-transition: All 0.3s ease;
+}
+
+input,
+textarea {
+  color: white;
+  font-size: 16px;
+  outline: none;
+}

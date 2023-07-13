@@ -1,5 +1,5 @@
 import express from "express";
-const router = express.Router();
+import { verifyToken } from "../controllers/users.js";
 import {
   createSet,
   getPublicSets,
@@ -7,11 +7,13 @@ import {
   editFlashcard,
 } from "../controllers/cards.js";
 
+const router = express.Router();
+
 router.get("/", getPublicSets);
 
 router.get("/:id", getSetByID);
 
-router.post("/", createSet);
+router.post("/", verifyToken, createSet);
 
 router.patch("/:id", editFlashcard);
 

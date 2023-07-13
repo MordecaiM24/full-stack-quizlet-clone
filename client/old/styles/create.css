@@ -1,0 +1,54 @@
+.create-set {
+  width: 1220px;
+}
+
+.create-set-header {
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+.create-set-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.create-set-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-set-title {
+  height: 48px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create-set-extras {
+  width: 100%;
+  height: max-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.create-set-description {
+  height: 120px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create-set-environment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.create-set-extra {
+  width: 100%;
+  box-sizing: border-box;
+  height: 50%;
+}

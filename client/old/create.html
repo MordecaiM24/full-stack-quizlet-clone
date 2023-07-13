@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/general.css" />
     <link rel="stylesheet" href="styles/create-heading.css" />
     <link rel="stylesheet" href="styles/create-body.css" />
+    <link rel="stylesheet" href="styles/toggle.css" />
     <title>Quizlet</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,22 +52,39 @@
       </div>
     </header>
     <div class="body">
-      <div class="create-set">
+      <form class="create-set">
         <div style="margin-bottom: 52px">
           <div class="create-set-header">
             <h1>Create a new study set</h1>
-            <button
-              style="
-                background-color: #4255ff;
-                color: white;
-                line-height: 20px;
-                border: none;
-                border-radius: 4px;
-                padding: 8px 16px;
-              "
-            >
-              Create
-            </button>
+            <div style="display: flex; align-items: center; column-gap: 8px">
+              <label class="toggle">
+                <input
+                  class="toggle-input"
+                  type="checkbox"
+                  name="public"
+                  value="public"
+                  onChange="{handleCheck}"
+                />
+                <span
+                  class="toggle-label"
+                  data-off="Private"
+                  data-on="Public"
+                ></span>
+                <span class="toggle-handle"></span>
+              </label>
+              <input
+                style="
+                  background-color: #4255ff;
+                  color: white;
+                  line-height: 20px;
+                  border: none;
+                  border-radius: 4px;
+                  padding: 8px 16px;
+                "
+                placeholder="Submit"
+                type="submit"
+              />
+            </div>
           </div>
           <div class="create-set-heading">
             <input
@@ -124,7 +142,7 @@
           </div>
         </div>
         <div class="create-set-body">
-          <div class="create-set-card">
+          <li class="create-set-card">
             <div class="create-set-taskbar">
               <p>1</p>
               <p>=</p>
@@ -149,9 +167,9 @@
                 <p>D E F I N I T I O N</p>
               </div>
             </div>
-          </div>
+          </li>
         </div>
-      </div>
+      </form>
     </div>
   </body>
 </html>

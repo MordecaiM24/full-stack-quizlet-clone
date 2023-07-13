@@ -5,7 +5,7 @@ const CardSetSchema = new mongoose.Schema(
     title: { type: String, required: true },
     cards: [
       {
-        order: { type: Number, required: true },
+        index: { type: Number, required: true },
         term: { type: String, required: true },
         definition: { type: String, required: true },
       },
@@ -18,10 +18,11 @@ const CardSetSchema = new mongoose.Schema(
         required: true,
       },
       ownerName: { type: String, required: true },
-      ownerProfPic: { type: String, reguired: true },
+      ownerProfPic: { type: String, required: false },
     },
     school: { type: String, required: false },
     subject: { type: String, required: false },
+    description: { type: String, required: false },
   },
   { timestamps: true }
 );

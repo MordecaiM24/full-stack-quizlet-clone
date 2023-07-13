@@ -23,16 +23,16 @@ export const Flashcards = ({ mode }) => {
   const [cardContent, setCardContent] = useState("term");
   const cards = cardSet.cards;
 
-  const sortedOrders = Array.from({ length: cards.length }, (_, i) => i + 1);
+  const sortedIndices = Array.from({ length: cards.length }, (_, i) => i + 1);
   const [cardMode, setCardMode] = useState("original");
-  const [cardOrder, setCardOrder] = useState(sortedOrders);
+  const [cardIndex, setCardIndex] = useState(sortedIndices);
   const [shuffleAlert, setShuffleAlert] = useState(false);
 
   const getCard = (currentCard) => {
-    let virtualCard = cardOrder[currentCard - 1];
+    let virtualCard = cardIndex[currentCard - 1];
 
     return cards.find((card) => {
-      return card.order === virtualCard;
+      return card.index === virtualCard;
     });
   };
 
@@ -80,10 +80,10 @@ export const Flashcards = ({ mode }) => {
             onClick={() => {
               if (cardMode == "shuffle") {
                 setCardMode("original");
-                setCardOrder(sortedOrders);
+                setCardIndex(sortedIndices);
               }
               if (cardMode == "original") {
-                setCardOrder(shuffleArray(sortedOrders));
+                setCardIndex(shuffleArray(sortedIndices));
                 setCardMode("shuffle");
               }
 
