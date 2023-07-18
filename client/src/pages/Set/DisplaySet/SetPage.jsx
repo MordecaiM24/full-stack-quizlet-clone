@@ -39,6 +39,8 @@ export const SetPage = () => {
           `http://192.168.1.23:5000/api/flashcards/${setID}`
         );
         setCardSet(response.data[0]);
+        console.log("CARDSET");
+        console.log(response.data[0]);
         setLoading(false);
 
         if (cardSet === {}) {

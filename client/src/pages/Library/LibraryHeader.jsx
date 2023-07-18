@@ -1,11 +1,10 @@
+import { profPic } from "assets/assets";
+
 export const LibraryHeader = () => {
   return (
     <div className="library-page-header">
       <div className="library-user">
-        <img
-          className="library-user-prof-pic"
-          src="https://lh3.googleusercontent.com/a/AAcHTtcr1LBpHf5N5itc--qbSwRpH4yb7kx1ym5osFZjVUIx=s96-c?sz=150"
-        />
+        <img className="library-user-prof-pic" src={profPic} />
         <h2>{localStorage.getItem("username")}</h2>
       </div>
       <div className="library-page-tabs">

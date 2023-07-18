@@ -66,7 +66,7 @@ const autoCreate = async (req, res, next) => {
     messages: [
       {
         role: "user",
-        content: `Create a json object array of ${numCards} terms and definitions relating to ${topic} in the format where the json array is called data`,
+        content: `Return only a json object array of ${numCards} terms and definitions relating to ${topic} in the format where the json array is called data.`,
       },
     ],
   });
@@ -90,7 +90,47 @@ const autoCreate = async (req, res, next) => {
   res.status(200).json(cards);
 };
 
-export { createSet, getPublicSets, getSetByID, editFlashcard, autoCreate };
+const getQA = async (req, res, next) => {
+  let cards = req.body;
+  console.log(cards);
+  cards = JSON.parse(cards.data);
+  console.log(cards);
+  cards = JSON.stringify(cards.newArray);
+
+  const chatGPT = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    messages: [
+      {
+        role: "user",
+        content: `${cards} Create a new json array using the given array that returns a fill in the blank question and answer with the previous terms and definitions. `,
+      },
+    ],
+  });
+  console.log(chatGPT);
+
+  const chatGPTMessage = chatGPT.data.choices[0].message;
+  console.log("INITIAL CHATGPT RESPONSE MESSAGE");
+  console.log(chatGPTMessage);
+
+  let response = chatGPTMessage.content;
+  console.log("MESSAGE.CONTENT HERE");
+  console.log(response);
+
+  response = JSON.parse(response);
+  console.log("JSON PARSED MESSAGE.CONTENT");
+  console.log(response);
+
+  res.status(200).json(response);
+};
+
+export {
+  createSet,
+  getPublicSets,
+  getSetByID,
+  editFlashcard,
+  autoCreate,
+  getQA,
+};
 
 // curl https://api.openai.com/v1/chat/completions \
 //   -H "Content-Type: application/json" \

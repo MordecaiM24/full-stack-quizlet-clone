@@ -6,11 +6,14 @@ import {
   getSetByID,
   editFlashcard,
   autoCreate,
+  getQA,
 } from "../controllers/cards.js";
 
 const router = express.Router();
 
 router.get("/auto", autoCreate);
+
+router.post("/qa", getQA);
 
 router.get("/", getPublicSets);
 

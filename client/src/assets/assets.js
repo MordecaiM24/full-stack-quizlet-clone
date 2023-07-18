@@ -17,6 +17,10 @@ import soundIcon from "./sound-icon.svg";
 import star from "./star.svg";
 import trashIcon from "./trash-icon.svg";
 import xIcon from "./x-icon.svg";
+import profPic from "./prof-pic.png";
+import learnIcon from "./learn-icon.png";
+import redX from "./red-x.svg";
+import check from "./check.svg";
 
 export {
   backIcon,
@@ -38,4 +42,8 @@ export {
   star,
   trashIcon,
   xIcon,
+  profPic,
+  learnIcon,
+  redX,
+  check,
 };

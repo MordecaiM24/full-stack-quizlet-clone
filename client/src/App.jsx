@@ -8,6 +8,7 @@ import { Navbar } from "common/router/Navbar";
 import { Error } from "common/Error";
 import { CreateSet } from "pages/Set/CreateSet/CreateSet";
 import { Notifications } from "pages/User/Notifications";
+import { Learn } from "pages/Games/Learn";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/auth" element={<Auth />}></Route>
           <Route path="/create" element={<CreateSet />}></Route>
           <Route path="/notifications" element={<Notifications />}></Route>
+          <Route path="/learn/:id" element={<Learn />}></Route>
           <Route path="/*" element={<Error />}></Route>
         </Routes>
       </Router>

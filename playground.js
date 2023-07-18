@@ -1,5 +1,39 @@
-const response = "data: [\n  {\n    \"term\": \"Cell\",\n    \"definition\": \"The smallest structural and functional unit of an organism, typically microscopic and consisting of cytoplasm and a nucleus enclosed in a membrane.\"\n  },\n  {\n    \"term\": \"DNA\",\n    \"definition\": \"Deoxyribonucleic acid, a self-replicating material present in nearly all living organisms, which carries genetic information.\"\n  },\n  {\n    \"term\": \"Mitosis\",\n    \"definition\": \"A type of cell division that results in two daughter cells each having the same number and kind of chromosomes as the parent nucleus.\"\n  },\n  {\n    \"term\": \"Photosynthesis\",\n    \"definition\": \"The process by which green plants and some other organisms use sunlight to synthesize foods with the help of chlorophyll, while releasing oxygen as a byproduct.\"\n  },\n  {\n    \"term\": \"Evolution\",\n    \"definition\": \"The scientific theory that explains the origin and development of species and how organisms adapt and change over time through natural selection.\"\n  }\n]";
-let newResponse = response;
-newResponse = "{" + "\"" + newResponse.substring(0,4) + "\"" + newResponse.substring(4) + "}"
-const jsonResponse = JSON.parse(newResponse);
-console.log(jsonResponse);
+const response = {
+  data: [
+    {
+      question:
+        "The decade of the 1920's, also known as the ________, was a time of prosperity and excitement.",
+      answer: "Roaring Twenties",
+    },
+    {
+      question:
+        "________ is the preoccupation with the purchasing of material goods.",
+      answer: "Consumerism",
+    },
+    {
+      question:
+        "The ________ was an amendment to the U.S. Constitution (1920) that granted women the right to vote.",
+      answer: "19th Amendment",
+    },
+    {
+      question:
+        "________ is the intense fear of communism and other politically radical ideas.",
+      answer: "Red Scare",
+    },
+    {
+      question:
+        "The ________ was a 1920 operation coordinated by the Attorney General in which federal marshals raided the homes of suspected radicals and the headquarters of radical organizations in 32 cities.",
+      answer: "Palmer Raids",
+    },
+    {
+      question:
+        "________ was a Harding administration scandal in which the Secretary of the Interior profited from secret leasing to private oil companies of government oil reserves.",
+      answer: "Teapot Dome",
+    },
+    {
+      question:
+        "________ is a policy of non-participation in international, economic, and political relations.",
+      answer: "Isolationism",
+    },
+  ],
+};

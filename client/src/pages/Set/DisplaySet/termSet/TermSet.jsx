@@ -23,7 +23,7 @@ export const TermSet = () => {
         <h2>Terms in this set ({cardSet.cards.length})</h2>
         <div className="sort">
           <h4>Original</h4>
-          <img class="down-arrow" src={downArrow} />
+          <img className="down-arrow" src={downArrow} />
         </div>
       </div>
       {listTerms(cardSet.cards)}

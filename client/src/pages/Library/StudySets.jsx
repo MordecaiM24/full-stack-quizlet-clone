@@ -1,4 +1,4 @@
-import { downArrow, searchIcon } from "assets/assets";
+import { downArrow, profPic, searchIcon } from "assets/assets";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -51,14 +51,12 @@ export const StudySets = () => {
             onClick={() => {
               navigate(`/cards/${set._id}`);
             }}
+            style={{ cursor: "pointer" }}
           >
             <div className="set-info">
               <p className="term-count">{set.cards.length} terms</p>
               <div className="set-creator">
-                <img
-                  className="set-creator-prof-pic"
-                  src="https://lh3.googleusercontent.com/a/AAcHTtcr1LBpHf5N5itc--qbSwRpH4yb7kx1ym5osFZjVUIx=s96-c?sz=150"
-                />
+                <img className="set-creator-prof-pic" src={profPic} />
                 <p className="set-creator-user">{set.userOwner.ownerName}</p>
               </div>
             </div>

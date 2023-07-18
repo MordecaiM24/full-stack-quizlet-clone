@@ -4,13 +4,14 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import { userRouter } from "./routes/users.js";
 import { flashcardRouter } from "./routes/flashcards.js";
-import { autoCreate } from "./controllers/cards.js";
+import { autoCreate, getQA } from "./controllers/cards.js";
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
+app.use("/qa", getQA);
 app.use("/api/flashcards", flashcardRouter);
 app.use("/api/users", userRouter);
 

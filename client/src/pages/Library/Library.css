@@ -161,8 +161,9 @@ hr {
 }
 
 .term-count {
+  width: max-content;
   line-height: 16px;
-  flex: 0.4;
+  flex: 0.5;
   border-right: solid 2px rgb(11, 9, 45);
   text-align: left;
   padding-right: 16px;

@@ -10,6 +10,12 @@ const CardSetSchema = new mongoose.Schema(
         definition: { type: String, required: true },
       },
     ],
+    qa: [
+      {
+        question: { type: String, required: true },
+        definition: { type: String, required: true },
+      },
+    ],
     public: { type: Boolean, required: true },
     userOwner: {
       ownerId: {
