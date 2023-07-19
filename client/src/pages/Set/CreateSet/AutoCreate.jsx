@@ -133,6 +133,7 @@ export const AutoCreate = (props) => {
         </div>
         <div className="modal-body">
           <form
+            autoComplete="off"
             onSubmit={(event) => {
               event.preventDefault();
               getCards(topic, numCards);

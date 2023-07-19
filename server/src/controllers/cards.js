@@ -79,6 +79,14 @@ const autoCreate = async (req, res, next) => {
   console.log("MESSAGE.CONTENT HERE");
   console.log(response);
 
+  //Trim response to only JSON
+  let firstOpen, firstClose;
+  firstOpen = response.indexOf("{", firstOpen + 1);
+  firstClose = response.lastIndexOf("}");
+  console.log("firstOpen: " + firstOpen, "firstClose: " + firstClose);
+
+  response = response.substring(firstOpen, firstClose + 1);
+
   response = JSON.parse(response);
   console.log("JSON PARSED MESSAGE.CONTENT");
   console.log(response);

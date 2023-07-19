@@ -76,6 +76,8 @@ export const Learn = () => {
       });
     }
     if (options.questionFormat.fillInBlank) {
+      console.log(currentCard);
+      console.log(cardSet);
       setCardContent({
         question: cardSet.qa[currentCard].question,
         questionType: "Fill in the Blank",
@@ -142,7 +144,9 @@ export const Learn = () => {
         });
       }
     } else if (options.questionFormat.fillInBlank) {
-      if (answer.toLowerCase === cardSet.qa[currentCard].answer.toLowerCase) {
+      if (
+        answer.toLowerCase() === cardSet.qa[currentCard].answer.toLowerCase()
+      ) {
         setAnswerBox({
           inputAnswer: false,
           wrongAnswer: false,

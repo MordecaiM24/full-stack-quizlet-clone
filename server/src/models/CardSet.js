@@ -13,7 +13,7 @@ const CardSetSchema = new mongoose.Schema(
     qa: [
       {
         question: { type: String, required: true },
-        definition: { type: String, required: true },
+        answer: { type: String, required: true },
       },
     ],
     public: { type: Boolean, required: true },

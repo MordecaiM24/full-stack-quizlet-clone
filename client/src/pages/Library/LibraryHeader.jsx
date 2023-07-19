@@ -14,7 +14,6 @@ export const LibraryHeader = () => {
         <button className="page-tab">Study Sets</button>
         <button className="page-tab">Expert Solutions</button>
         <button className="page-tab">Subjects</button>
-        <button className="page-tab">classNamees</button>
       </div>
     </div>
   );

@@ -62,20 +62,28 @@ export const CreateSet = () => {
       const res = await axios.post("http://192.168.1.23:5000/qa", {
         data: cards,
       });
+
       console.log("Getting QA");
-      console.log(res);
+      console.log(res.data);
 
-      setCardSet({ ...cardSet, qa: res });
+      let newCardSet = cardSet;
+      console.log(cardSet);
 
-      await axios.post(
-        "http://192.168.1.23:5000/api/flashcards",
-        { ...cardSet },
-        { headers: { authorization: cookies.access_token } }
-      );
+      newCardSet = {
+        ...newCardSet,
+        qa: res.data,
+      };
+      console.log(newCardSet);
+
+      await axios.post("http://192.168.1.23:5000/api/flashcards", newCardSet, {
+        headers: { authorization: cookies.access_token },
+      });
+
       alert("Set created!");
       navigate("/library");
     } catch (err) {
       alert(err);
+      console.log(err);
     }
   };
 
@@ -130,7 +138,7 @@ export const CreateSet = () => {
           changeStyle={changeStyle}
         />
       )}
-      <form className="create-set" onSubmit={handleSubmit}>
+      <form autoComplete="off" className="create-set" onSubmit={handleSubmit}>
         <div style={{ marginBottom: "52px" }}>
           <div className="create-set-header">
             <h1>Create a new study set</h1>
