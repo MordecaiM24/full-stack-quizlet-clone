@@ -4,7 +4,7 @@ Quizless is a fullstack quizlet clone with GPT integration (before quizlet did i
 
 ## Installation
 
-The project is divided into a frontend react client library and backend node & express
+The project is divided into a frontend react client folder and backend node & express server folder
 
 ```
 npm install
