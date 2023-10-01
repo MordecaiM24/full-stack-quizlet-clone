@@ -16,6 +16,7 @@ app.use("/api/flashcards", flashcardRouter);
 app.use("/api/users", userRouter);
 
 mongoose.connect(
+  // `mongodb+srv://${process.env.ATLAS_ID}:${process.env.ATLAS_PASSWORD}@quizlet-clone.lyjaupf.mongodb.net/?retryWrites=true&w=majority`
   `mongodb+srv://mordecaim:!Ar84Dah@quizlet-clone.lyjaupf.mongodb.net/?retryWrites=true&w=majority`
 );
 
