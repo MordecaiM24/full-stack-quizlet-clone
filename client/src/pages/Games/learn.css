@@ -59,14 +59,14 @@
 /**/
 .learn-box {
   background-color: rgb(46, 57, 86);
-  margin: 48px 576px;
+  margin: 48px 324px;
   width: 840px;
   height: min-content;
   padding: 24px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border-radius: 16px;
 }
 

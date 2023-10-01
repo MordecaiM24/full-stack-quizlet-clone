@@ -36,14 +36,12 @@ export const SetPage = () => {
       const setID = id;
       try {
         const response = await axios.get(
-          `http://192.168.1.23:5000/api/flashcards/${setID}`
+          `http://localhost:5000/api/flashcards/${setID}`
         );
         setCardSet(response.data[0]);
-        console.log("CARDSET");
-        console.log(response.data[0]);
         setLoading(false);
 
-        if (cardSet === {}) {
+        if (cardSet == {}) {
           throw new Error("err");
         }
       } catch (err) {

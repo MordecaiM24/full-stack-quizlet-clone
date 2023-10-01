@@ -81,7 +81,6 @@ export const AutoCreate = (props) => {
     );
 
     response = response.data;
-    console.log(response);
     setVisibility(false);
 
     let i = 0;

@@ -20,7 +20,6 @@ const getPublicSets = async (req, res, next) => {
 const getSetByID = async (req, res, next) => {
   const id = req.params.id;
   try {
-    console.log();
     const set = await CardSetModel.find({ _id: id });
     res.status(200).json(set);
   } catch (err) {

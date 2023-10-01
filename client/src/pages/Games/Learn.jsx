@@ -6,13 +6,13 @@ import "./learn.css";
 import { learnIcon, downArrow, xIcon, redX, check } from "assets/assets";
 import "./validate.css";
 import "./options-modal.css";
-import { set } from "react-hook-form";
 
 export const Learn = () => {
   let { id } = useParams();
   const navigate = useNavigate();
   const [cardSet, setCardSet] = useState({});
   const [isLoading, setLoading] = useState(true);
+  // Loading state implemented so that useeffects don't crash
   const [currentCard, setCurrentCard] = useState(0);
   const [cardContent, setCardContent] = useState({
     question: "",
@@ -42,32 +42,39 @@ export const Learn = () => {
     },
   });
 
+  // useEffect(() => {
+  //   console.log(`CARD SET: ${JSON.stringify(cardSet)}`);
+  //   console.log(`CURRENT CARD: ${currentCard}`);
+  //   console.log(`ANSWER: ${answer}`);
+  //   console.log(`CARD CONTENT: ${JSON.stringify(cardContent)}`);
+  // }, [cardContent, cardSet, currentCard, answer]);
+
   const createCardContent = (currentCard, cards) => {
-    if (
-      options.questionFormat.answerWithDefinition &&
-      options.questionFormat.answerWithTerm
-    ) {
-      setCardContent(
-        Math.random() < 0.5
-          ? {
-              question: cards[currentCard].term,
-              questionType: "Term",
-              answerType: "definition",
-            }
-          : {
-              question: cards[currentCard].definition,
-              questionType: "Definition",
-              answerType: "term",
-            }
-      );
-    }
-    if (options.questionFormat.answerWithDefinition) {
-      setCardContent({
-        question: cards[currentCard].term,
-        questionType: "Term",
-        answerType: "definition",
-      });
-    }
+    // if (
+    //   options.questionFormat.answerWithDefinition &&
+    //   options.questionFormat.answerWithTerm
+    // ) {
+    //   setCardContent(
+    //     Math.random() < 0.5
+    //       ? {
+    //           question: cards[currentCard].term,
+    //           questionType: "Term",
+    //           answerType: "definition",
+    //         }
+    //       : {
+    //           question: cards[currentCard].definition,
+    //           questionType: "Definition",
+    //           answerType: "term",
+    //         }
+    //   );
+    // }
+    // if (options.questionFormat.answerWithDefinition) {
+    //   setCardContent({
+    //     question: cards[currentCard].term,
+    //     questionType: "Term",
+    //     answerType: "definition",
+    //   });
+    // }
     if (options.questionFormat.answerWithTerm) {
       setCardContent({
         question: cards[currentCard].definition,
@@ -75,15 +82,13 @@ export const Learn = () => {
         answerType: "term",
       });
     }
-    if (options.questionFormat.fillInBlank) {
-      console.log(currentCard);
-      console.log(cardSet);
-      setCardContent({
-        question: cardSet.qa[currentCard].question,
-        questionType: "Fill in the Blank",
-        answerType: "answer",
-      });
-    }
+    // if (options.questionFormat.fillInBlank) {
+    //   setCardContent({
+    //     question: cardSet.qa[currentCard].question,
+    //     questionType: "Fill in the Blank",
+    //     answerType: "answer",
+    //   });
+    // }
   };
 
   useEffect(() => {
@@ -91,16 +96,14 @@ export const Learn = () => {
       const setID = id;
       try {
         const response = await axios.get(
-          `http://192.168.1.23:5000/api/flashcards/${setID}`
+          `http://localhost:5000/api/flashcards/${setID}`
         );
         setCardSet(response.data[0]);
-        console.log("CARDSET");
-        console.log(cardSet);
         setLoading(false);
 
         createCardContent(currentCard, response.data[0].cards);
 
-        if (cardSet === {}) {
+        if (cardSet == {}) {
           throw new Error("err");
         }
       } catch (err) {
@@ -113,28 +116,49 @@ export const Learn = () => {
 
   useEffect(() => {
     if (cardContent.question) {
-      if (options.questionFormat.answerWithTerm) {
-        setCardContent(cardSet.cards[currentCard].definition);
-      }
-      if (options.questionFormat.answerWithDefinition) {
-        setCardContent(cardSet.cards[currentCard].term);
-      }
-      if (options.questionFormat.fillInBlank) {
-        createCardContent(currentCard);
-      }
+      console.log("Resetting card content");
+      console.log("1." + cardSet.cards[currentCard].definition);
+      // if statement prevents render attempt before setting
+      // if (options.questionFormat.answerWithTerm) {
+      // setCardContent(cardSet.cards[currentCard].definition);
+      setCardContent({
+        question: cardSet.cards[currentCard].definition,
+        questionType: "Definition",
+        answerType: "term",
+      });
+      // }
+      // if (options.questionFormat.answerWithDefinition) {
+      //   setCardContent(cardSet.cards[currentCard].term);
+      // }
+      // if (options.questionFormat.fillInBlank) {
+      //   createCardContent(currentCard);
+      // }
     }
-  }, [currentCard, options.questionFormat]);
+  }, [currentCard]);
 
   const checkAnswer = (event) => {
+    console.log(cardContent);
+    console.log(cardSet);
+    console.log(cardSet.cards);
+    console.log(currentCard);
+    console.log(cardSet.cards[currentCard]);
+    console.log(cardContent.answerType);
+
     event.preventDefault();
     if (
       options.questionFormat.answerWithDefinition ||
       options.questionFormat.answerWithTerm
     ) {
       if (
-        answer.toLowerCase ===
-        cardSet.cards[currentCard][cardContent.answerType].toLowerCase
+        answer.toLowerCase() ===
+        cardSet.cards[currentCard][cardContent.answerType].toLowerCase()
       ) {
+        setAnswerBox({
+          inputAnswer: false,
+          wrongAnswer: false,
+          correctAnswer: true,
+          skippedAnswer: false,
+        });
       } else {
         setAnswerBox({
           inputAnswer: false,
@@ -165,6 +189,7 @@ export const Learn = () => {
   };
 
   const nextCard = () => {
+    console.log(currentCard);
     setAnswer("");
     setCurrentCard(currentCard + 1);
     setAnswerBox({
@@ -172,6 +197,7 @@ export const Learn = () => {
       wrongAnswer: false,
       correctAnswer: false,
     });
+    console.log(currentCard);
   };
 
   const handleTermChange = () => {
@@ -366,7 +392,9 @@ export const Learn = () => {
               />
               <div className="answer-options">
                 <button className="idk-btn">Don't know?</button>
-                <button className="answer-btn">Answer</button>
+                <button className="answer-btn" type="submit">
+                  Answer
+                </button>
               </div>
             </form>
           </div>
@@ -403,14 +431,6 @@ const WrongAnswer = (props) => {
   const { question, questionType, answerType } = props.cardContent;
   const nextCard = props.nextCard;
   const qa = props.fillIn;
-  useEffect(() => {
-    console.log("QA ARRAY");
-    console.log(qa);
-    console.log("CARDS ARRAY");
-    console.log(cards);
-    console.log("QUESTION TYPE");
-    console.log(questionType);
-  }, []);
 
   return (
     <>
@@ -460,7 +480,7 @@ const CorrectAnswer = (props) => {
       wrongAnswer: false,
       correctAnswer: false,
     });
-  }, 2000);
+  }, 500);
 
   return (
     <>

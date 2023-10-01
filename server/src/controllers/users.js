@@ -4,20 +4,26 @@ import { UserModel } from "../models/User.js";
 import "dotenv/config";
 
 const createUser = async (req, res) => {
+  console.log("Creating new user");
+
   const { username, password } = req.body;
   let user = await UserModel.findOne({ username }); // key value are the same, just passing key
 
   if (user) {
+    console.log("User already exists");
     return res.status(409).json({ msg: "User already exists" });
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
   console.log(hashedPassword);
   const newUser = new UserModel({ username, password: hashedPassword });
+  const tempUserList = await UserModel.find({});
+  console.log(tempUserList);
   await newUser.save();
 
   user = await UserModel.findOne({ username });
-  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+  // const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET); Taking this out b/c process.env doesn't work atm
+  const token = jwt.sign({ id: user._id }, "secret");
 
   res.json({ msg: "User registered successfully", token, userID: user._id });
 };

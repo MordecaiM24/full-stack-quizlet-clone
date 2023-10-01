@@ -1,6 +1,3 @@
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CreateBody.css";
@@ -54,28 +51,24 @@ export const CreateSet = () => {
 
   const handleSubmit = async () => {
     try {
-      console.log("Submitted");
-      const newArray = cardSet.cards.map(({ index, ...card }) => card);
-      const cards = JSON.stringify({ newArray });
-      console.log("CARDS PASSED");
-      console.log(cards);
-      const res = await axios.post("http://192.168.1.23:5000/qa", {
-        data: cards,
-      });
+      // const newArray = cardSet.cards.map(({ index, ...card }) => card);
+      // const cards = JSON.stringify({ newArray });
+      // const res = await axios.post("http://localhost:5000/qa", {
+      //   data: cards,
+      // });
 
-      console.log("Getting QA");
-      console.log(res.data);
+      // let newCardSet = cardSet;
 
-      let newCardSet = cardSet;
-      console.log(cardSet);
+      // newCardSet = {
+      //   ...newCardSet,
+      //   qa: res.data,
+      // };
 
-      newCardSet = {
-        ...newCardSet,
-        qa: res.data,
-      };
-      console.log(newCardSet);
+      // await axios.post("http://localhost:5000/api/flashcards", newCardSet, {
+      //   headers: { authorization: cookies.access_token },
+      // });
 
-      await axios.post("http://192.168.1.23:5000/api/flashcards", newCardSet, {
+      await axios.post("http://localhost:5000/api/flashcards", cardSet, {
         headers: { authorization: cookies.access_token },
       });
 
@@ -83,7 +76,6 @@ export const CreateSet = () => {
       navigate("/library");
     } catch (err) {
       alert(err);
-      console.log(err);
     }
   };
 
@@ -92,7 +84,6 @@ export const CreateSet = () => {
   };
 
   const handleCardChange = (event, index) => {
-    console.log(event);
     const { name, value } = event.target;
     const cards = [...cardSet.cards];
     cards[index][name] = value;

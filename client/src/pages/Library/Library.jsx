@@ -13,12 +13,12 @@ export const Library = () => {
     const fetchSets = async () => {
       try {
         const response = await axios.get(
-          `http://192.168.1.23:5000/api/flashcards/`
+          `http://localhost:5000/api/flashcards/`
         );
         setCardSets(response.data);
         setLoading(false);
 
-        if (cardSets === {}) {
+        if (cardSets == {}) {
           throw new Error("err");
         }
       } catch (err) {
