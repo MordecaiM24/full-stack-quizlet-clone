@@ -76,7 +76,7 @@ export const AutoCreate = (props) => {
 
   const getCards = async (topic, num) => {
     let response = await axios.get(
-      "http://localhost:5000/api/flashcards/auto",
+      `${process.env.REACT_APP_SERVER_DOMAIN}/api/flashcards/auto`,
       { params: { num, topic } }
     );
 

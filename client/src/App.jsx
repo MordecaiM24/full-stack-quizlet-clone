@@ -9,8 +9,13 @@ import { Error } from "common/Error";
 import { CreateSet } from "pages/Set/CreateSet/CreateSet";
 import { Notifications } from "pages/User/Notifications";
 import { Learn } from "pages/Games/Learn";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    console.log(process.env.REACT_APP_SERVER_DOMAIN);
+  }, []);
+
   return (
     <div className="App">
       <Router>

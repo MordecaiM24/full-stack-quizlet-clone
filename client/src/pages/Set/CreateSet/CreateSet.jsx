@@ -68,9 +68,13 @@ export const CreateSet = () => {
       //   headers: { authorization: cookies.access_token },
       // });
 
-      await axios.post("http://localhost:5000/api/flashcards", cardSet, {
-        headers: { authorization: cookies.access_token },
-      });
+      await axios.post(
+        `${process.env.REACT_APP_SERVER_DOMAIN}/api/flashcards`,
+        cardSet,
+        {
+          headers: { authorization: cookies.access_token },
+        }
+      );
 
       alert("Set created!");
       navigate("/library");

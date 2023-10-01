@@ -96,7 +96,7 @@ export const Learn = () => {
       const setID = id;
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/flashcards/${setID}`
+          `${process.env.REACT_APP_SERVER_DOMAIN}/api/flashcards/${setID}`
         );
         setCardSet(response.data[0]);
         setLoading(false);

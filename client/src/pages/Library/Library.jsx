@@ -13,7 +13,7 @@ export const Library = () => {
     const fetchSets = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/flashcards/`
+          `${process.env.REACT_APP_SERVER_DOMAIN}/api/flashcards/`
         );
         setCardSets(response.data);
         setLoading(false);
