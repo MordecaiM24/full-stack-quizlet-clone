@@ -14,6 +14,9 @@ app.use(cors());
 app.use("/qa", getQA);
 app.use("/api/flashcards", flashcardRouter);
 app.use("/api/users", userRouter);
+app.get("/", (req, res, next) => {
+  res.send("Hello world");
+});
 
 mongoose.connect(
   // `mongodb+srv://${process.env.ATLAS_ID}:${process.env.ATLAS_PASSWORD}@quizlet-clone.lyjaupf.mongodb.net/?retryWrites=true&w=majority`
